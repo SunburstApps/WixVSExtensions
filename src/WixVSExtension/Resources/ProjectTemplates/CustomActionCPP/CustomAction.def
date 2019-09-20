@@ -1,4 +1,4 @@
 LIBRARY "$projectname$"
 
 EXPORTS
-	CustomAction1
+	$safeprojectname$CA

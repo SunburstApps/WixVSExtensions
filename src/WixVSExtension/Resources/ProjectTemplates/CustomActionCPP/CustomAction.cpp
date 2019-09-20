@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-UINT __stdcall CustomAction1(MSIHANDLE hInstall)
+UINT __stdcall $safeprojectname$CA(MSIHANDLE hInstall)
 {
     HRESULT hr = S_OK;
     UINT er = ERROR_SUCCESS;
