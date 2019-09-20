@@ -1,0 +1,10 @@
+﻿<Project>
+  <ItemGroup>
+    <Content Include="Resources\XmlSchemas\*.xsd">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>Schemas</InstallRoot>
+      <Link>%(FileName)%(Extension)</Link> <!-- Required to prevent the Resources\XmlSchemas subdirectories from appearing in the VSIX. -->
+      <Visible>false</Visible>
+    </Content>
+  </ItemGroup>
+</Project>

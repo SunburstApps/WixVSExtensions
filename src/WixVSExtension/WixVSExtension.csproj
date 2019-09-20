@@ -192,82 +192,6 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
     </Content>
-    <Content Include="Resources\XmlSchemas\bal.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\complus.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\Dependency.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\difxapp.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\firewall.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\gaming.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\http.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\iis.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\lux.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\msmq.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\netfx.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\ps.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\sql.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\tag.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\thmutil.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\util.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\vs.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\wix.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
-    <Content Include="Resources\XmlSchemas\wixloc.xsd">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <InstallRoot>Schemas</InstallRoot>
-    </Content>
     <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.wxs">
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
@@ -331,6 +255,7 @@
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
     </None>
+    <None Include="VsixContent.targets" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -342,6 +267,7 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="VsixContent.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
