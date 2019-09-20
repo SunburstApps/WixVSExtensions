@@ -13,18 +13,3 @@ jobs:
     displayName: Set build number
 
   - template: dotnet.yml
-
-- job: WrapUp
-  dependsOn:
-  - Windows
-  pool:
-    vmImage: Ubuntu 16.04
-  condition: succeededOrFailed()
-  steps:
-  - checkout: self
-    clean: true
-  - template: install-dependencies.yml
-    parameters:
-      initArgs: -NoRestore
-  - template: publish-codecoverage.yml
-  - template: publish-deployables.yml
