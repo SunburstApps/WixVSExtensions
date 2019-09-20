@@ -9,7 +9,7 @@
     <ProjectTypeTag>WiX</ProjectTypeTag>
     <ProjectType>WiX</ProjectType>
     <TemplateID>Microsoft.Deployment.WindowsInstaller.CustomActionCS</TemplateID>
-    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
     <SortOrder>60</SortOrder>
     <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
     <CreateNewFolder>true</CreateNewFolder>

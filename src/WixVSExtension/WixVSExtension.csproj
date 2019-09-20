@@ -46,10 +46,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Content Include="Resources\ProjectTemplates\CustomActionCS\AssemblyInfo.cs">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
-    </Content>
     <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.cs">
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
@@ -143,10 +139,6 @@
     <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomActionCS.vstemplate">
       <IncludeInVSIX>true</IncludeInVSIX>
       <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
-    </Content>
-    <Content Include="Resources\ProjectTemplates\CustomActionVB\AssemblyInfo.vb">
-      <IncludeInVSIX>true</IncludeInVSIX>
-      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
     </Content>
     <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.vb">
       <IncludeInVSIX>true</IncludeInVSIX>
