@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Library\Library.csproj" />
+    <ProjectReference Include="..\WixVSExtensions\WixVSExtensions.csproj" />
   </ItemGroup>
 
   <ItemGroup>
