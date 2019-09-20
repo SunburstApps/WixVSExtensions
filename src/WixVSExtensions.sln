@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+VisualStudioVersion = 16.0.29311.281
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WixVSExtensions", "WixVSExtensions\WixVSExtensions.csproj", "{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{2ED3B576-4823-4B32-8AE9-E4516E7DDC90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WixVSExtensions.Tests", "WixVSExtensions.Tests\WixVSExtensions.Tests.csproj", "{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{609355F6-49FF-4DFC-9581-15E07DDA0EB3}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
 	EndProjectSection
@@ -37,6 +39,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {41D38D00-6362-43EE-BC9A-E6CE7FD071A8}
+		SolutionGuid = {306F25B7-7BB4-45A1-8875-C3B9BE3A4B05}
 	EndGlobalSection
 EndGlobal
