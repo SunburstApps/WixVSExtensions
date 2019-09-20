@@ -1,0 +1,28 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Merge Module Project for WiX v3</Name>
+    <Description>A project for creating a WiX based MSM file using WiX Toolset v3</Description>
+    <Icon>WixMergeModule.ico</Icon>
+    <LanguageTag>WiX</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>WiX</ProjectTypeTag>
+    <ProjectType>WiX</ProjectType>
+    <SortOrder>30</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>MergeModule</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+
+  <TemplateContent>
+    <Project File="MergeModule.wixproj" TargetFileName="$safeprojectname$.wixproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" TargetFileName="MergeModule.wxs">MergeModule.wxs</ProjectItem>
+    </Project>
+    <CustomParameters>
+      <CustomParameter Name="$loc_WXS_TODO1$" Value="TODO: Remove the comments around this Component element in order to add resources to this module." />
+      <CustomParameter Name="$loc_WXS_TODO2$" Value="TODO: Insert files, registry keys, and other resources here." />
+      <CustomParameter Name="$loc_WIXPROJ_TOMODIFY_LINE1$" Value="To modify your build process, add your task inside one of the targets below and uncomment it." />
+      <CustomParameter Name="$loc_WIXPROJ_TOMODIFY_LINE2$" Value="Other similar extension points exist, see Wix.targets." />
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

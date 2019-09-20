@@ -1,0 +1,18 @@
+<VSTemplate Version="2.0.0" Type="Item" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Include File</Name>
+    <Description>An empty Windows Installer XML include file (.wxi)</Description>
+    <Icon>IncludeFile.ico</Icon>
+    <ProjectType>WiX</ProjectType>
+    <SortOrder>30</SortOrder>
+    <DefaultName>Include.wxi</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+
+  <TemplateContent>
+    <ProjectItem SubType="Code" ReplaceParameters="true">IncludeFile.wxi</ProjectItem>
+    <CustomParameters>
+      <CustomParameter Name="$loc_TODO$" Value="TODO: Put your code here."/>
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

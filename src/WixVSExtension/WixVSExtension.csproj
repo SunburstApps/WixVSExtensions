@@ -46,9 +46,53 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\AssemblyInfo.cs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.cs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
     <Compile Include="WixVSExtensionPackage.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.txt">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
     <Content Include="Resources\MSBuild\wix.ca.targets">
       <IncludeInVSIX>true</IncludeInVSIX>
       <InstallRoot>MSBuild</InstallRoot>
@@ -63,6 +107,90 @@
       <IncludeInVSIX>true</IncludeInVSIX>
       <InstallRoot>MSBuild</InstallRoot>
       <VSIXSubPath>Microsoft\WiX\v3.x</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.cpp">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.def">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomActionCPP.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomActionCPP.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\stdafx.cpp">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\stdafx.h">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\targetver.h">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.csproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomActionCS.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\AssemblyInfo.vb">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.vb">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.vbproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomActionVB.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\WixBundle.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\WixBundle.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\WixLibrary.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\WixLibrary.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\WixMergeModule.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\WixMergeModule.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\WixProject.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\WixProject.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
     </Content>
     <Content Include="Resources\XmlSchemas\bal.xsd">
       <IncludeInVSIX>true</IncludeInVSIX>
@@ -139,6 +267,66 @@
     <Content Include="Resources\XmlSchemas\wixloc.xsd">
       <IncludeInVSIX>true</IncludeInVSIX>
       <InstallRoot>Schemas</InstallRoot>
+    </Content>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.wxi">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.wxl">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.vcxproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.config">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.config">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\Bundle.Generated.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\Bundle.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\BundleProject.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\Library.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\setuplibrary.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\MergeModule.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\MergeModule.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\Product.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\SetupProject.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
     </Content>
     <None Include="source.extension.vsixmanifest">
       <SubType>Designer</SubType>
