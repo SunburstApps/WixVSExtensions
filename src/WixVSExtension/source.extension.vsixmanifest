@@ -5,7 +5,7 @@
         <DisplayName>Sunburst WiX Visual Studio Extension</DisplayName>
         <Description xml:space="preserve">Visual Studio integration for the WiX Toolset - the most powerful set of tools available to create your Windows installation experience. Contains extra features above and beyond the upstream original, such as PackageReference support and a graphical UI designer. Please note that this extension *cannot* be installed side-by-side with the upstream "Votive" extension.</Description>
     </Metadata>
-    <Installation>
+    <Installation AllUsers="true">
         <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
     </Installation>
     <Dependencies>
