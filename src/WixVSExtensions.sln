@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{609355F6-49FF-4DFC-9581-15E07DDA0EB3}"
 	ProjectSection(SolutionItems) = preProject
 		Directory.Build.props = Directory.Build.props
+		..\version.json = ..\version.json
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixVSExtension", "WixVSExtension\WixVSExtension.csproj", "{7985B34E-DFC0-4FEC-8244-E031C5452578}"
