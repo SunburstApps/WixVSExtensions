@@ -12,6 +12,7 @@ namespace WixToolset.VisualStudioExtension
     /// This is the class that implements the package exposed by this assembly.
     /// </summary>
     [PackageRegistration(RegisterUsing = RegistrationMethod.CodeBase, UseManagedResourcesOnly = true, AllowsBackgroundLoading = true)]
+    [InstalledProductRegistration("#110", "#112", ThisAssembly.AssemblyInformationalVersion)]
     [ProvideObject(typeof(WixInstallerPropertyPage), RegisterUsing = RegistrationMethod.CodeBase)]
     [ProvideObject(typeof(WixBuildEventsPropertyPage), RegisterUsing = RegistrationMethod.CodeBase)]
     [ProvideObject(typeof(WixBuildPropertyPage), RegisterUsing = RegistrationMethod.CodeBase)]
