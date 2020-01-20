@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>16.0</MinimumVisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectTypeGuids>{82b43b9b-a64c-4715-b499-d71e9ca2bd60};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{7985B34E-DFC0-4FEC-8244-E031C5452578}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WixVSExtension</RootNamespace>
+    <AssemblyName>WixVSExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <GeneratePkgDefFile>true</GeneratePkgDefFile>
+    <UseCodebase>true</UseCodebase>
+    <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>
+    <IncludeDebugSymbolsInVSIXContainer>false</IncludeDebugSymbolsInVSIXContainer>
+    <IncludeDebugSymbolsInLocalVSIXDeployment>false</IncludeDebugSymbolsInLocalVSIXDeployment>
+    <CopyBuildOutputToOutputDirectory>true</CopyBuildOutputToOutputDirectory>
+    <CopyOutputSymbolsToOutputDirectory>true</CopyOutputSymbolsToOutputDirectory>
+    <StartAction>Program</StartAction>
+    <StartProgram Condition="'$(DevEnvDir)' != ''">$(DevEnvDir)devenv.exe</StartProgram>
+    <StartArguments>/rootsuffix Exp</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CA2213</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>CA2213</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Controls\FolderBrowserTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FolderBrowserTextBox.Designer.cs">
+      <DependentUpon>FolderBrowserTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WixBuildEventEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WixBuildEventEditor.Designer.cs">
+      <DependentUpon>WixBuildEventEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WixBuildEventTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WixColorUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WixColorUserControl.Designer.cs">
+      <DependentUpon>WixColorUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WixFoldersSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\WixFoldersSelector.Designer.cs">
+      <DependentUpon>WixFoldersSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\WixGroupBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\WixGroupLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DontShowAgainDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DontShowAgainDialog.Designer.cs">
+      <DependentUpon>DontShowAgainDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileOverwriteDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileOverwriteDialog.Designer.cs">
+      <DependentUpon>FileOverwriteDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FileSearchHelperMethods.cs" />
+    <Compile Include="Forms\WixBuildEventEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WixBuildEventEditorForm.Designer.cs">
+      <DependentUpon>WixBuildEventEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="IProjectSourceNode.cs" />
+    <Compile Include="IsolatedDomain.cs" />
+    <Compile Include="OAWixProject.cs" />
+    <Compile Include="ProjectBase\AssemblyReferenceNode.cs" />
+    <Compile Include="ProjectBase\Attributes.cs" />
+    <Compile Include="ProjectBase\BuildDependency.cs" />
+    <Compile Include="ProjectBase\BuildManagerAdapter.cs" />
+    <Compile Include="ProjectBase\BuildPropertyPage.cs" />
+    <Compile Include="ProjectBase\ComReferenceNode.cs" />
+    <Compile Include="ProjectBase\ConfigProvider.cs" />
+    <Compile Include="ProjectBase\ConfigurationProperties.cs" />
+    <Compile Include="ProjectBase\DataObject.cs" />
+    <Compile Include="ProjectBase\DependentFileNode.cs" />
+    <Compile Include="ProjectBase\DesignPropertyDescriptor.cs" />
+    <Compile Include="ProjectBase\DocumentManager.cs" />
+    <Compile Include="ProjectBase\EnumDependencies.cs" />
+    <Compile Include="ProjectBase\FileChangeManager.cs" />
+    <Compile Include="ProjectBase\FileDocumentManager.cs" />
+    <Compile Include="ProjectBase\FileNode.cs" />
+    <Compile Include="ProjectBase\FolderNode.cs" />
+    <Compile Include="ProjectBase\GlobalPropertyHandler.cs" />
+    <Compile Include="ProjectBase\GlobalSuppressions.cs" />
+    <Compile Include="ProjectBase\HierarchyNode.cs" />
+    <Compile Include="ProjectBase\IDEBuildLogger.cs" />
+    <Compile Include="ProjectBase\ImageHandler.cs" />
+    <Compile Include="ProjectBase\Interfaces.cs" />
+    <Compile Include="ProjectBase\LangProj\OAAssemblyReference.cs" />
+    <Compile Include="ProjectBase\LangProj\OABuildManager.cs" />
+    <Compile Include="ProjectBase\LangProj\OAComReference.cs" />
+    <Compile Include="ProjectBase\LangProj\OAProjectReference.cs" />
+    <Compile Include="ProjectBase\LangProj\OAReferenceBase.cs" />
+    <Compile Include="ProjectBase\LangProj\OAReferences.cs" />
+    <Compile Include="ProjectBase\LangProj\OAVSProject.cs" />
+    <Compile Include="ProjectBase\LangProj\OAVSProjectItem.cs" />
+    <Compile Include="ProjectBase\LocalizableProperties.cs" />
+    <Compile Include="ProjectBase\Microsoft.VisualStudio.Package.Project.cs" />
+    <Compile Include="ProjectBase\Misc\ConnectionPointContainer.cs" />
+    <Compile Include="ProjectBase\Misc\ExternDll.cs" />
+    <Compile Include="ProjectBase\Misc\NativeMethods.cs" />
+    <Compile Include="ProjectBase\Misc\UnsafeNativeMethods.cs" />
+    <Compile Include="ProjectBase\NestedProjectBuildDependency.cs" />
+    <Compile Include="ProjectBase\NestedProjectNode.cs" />
+    <Compile Include="ProjectBase\NodeProperties.cs" />
+    <Compile Include="ProjectBase\OAFileItem.cs" />
+    <Compile Include="ProjectBase\OAFolderItem.cs" />
+    <Compile Include="ProjectBase\OANavigableProjectItems.cs" />
+    <Compile Include="ProjectBase\OANestedProjectItem.cs" />
+    <Compile Include="ProjectBase\OANullProperty.cs" />
+    <Compile Include="ProjectBase\OAProject.cs" />
+    <Compile Include="ProjectBase\OAProjectItem.cs" />
+    <Compile Include="ProjectBase\OAProjectItems.cs" />
+    <Compile Include="ProjectBase\OAProperties.cs" />
+    <Compile Include="ProjectBase\OAProperty.cs" />
+    <Compile Include="ProjectBase\OAReferenceFolderItem.cs" />
+    <Compile Include="ProjectBase\OAReferenceItem.cs" />
+    <Compile Include="ProjectBase\OASolutionFolder.cs" />
+    <Compile Include="ProjectBase\OleServiceProvider.cs" />
+    <Compile Include="ProjectBase\Output.cs" />
+    <Compile Include="ProjectBase\OutputGroup.cs" />
+    <Compile Include="ProjectBase\ProjectConfig.cs" />
+    <Compile Include="ProjectBase\ProjectContainerNode.cs" />
+    <Compile Include="ProjectBase\ProjectDesignerDocumentManager.cs" />
+    <Compile Include="ProjectBase\ProjectDocumentsListener.cs" />
+    <Compile Include="ProjectBase\ProjectElement.cs" />
+    <Compile Include="ProjectBase\ProjectFactory.cs" />
+    <Compile Include="ProjectBase\ProjectFileConstants.cs" />
+    <Compile Include="ProjectBase\ProjectNode.CopyPaste.cs" />
+    <Compile Include="ProjectBase\ProjectNode.cs" />
+    <Compile Include="ProjectBase\ProjectNode.Events.cs" />
+    <Compile Include="ProjectBase\ProjectOptions.cs" />
+    <Compile Include="ProjectBase\ProjectPackage.cs" />
+    <Compile Include="ProjectBase\ProjectReferenceNode.cs" />
+    <Compile Include="ProjectBase\PropertiesEditorLauncher.cs" />
+    <Compile Include="ProjectBase\ReferenceContainerNode.cs" />
+    <Compile Include="ProjectBase\ReferenceNode.cs" />
+    <Compile Include="ProjectBase\RegisteredProjectType.cs" />
+    <Compile Include="ProjectBase\SelectionListener.cs" />
+    <Compile Include="ProjectBase\SettingsPage.cs" />
+    <Compile Include="ProjectBase\SingleFileGenerator.cs" />
+    <Compile Include="ProjectBase\SingleFileGeneratorFactory.cs" />
+    <Compile Include="ProjectBase\SolutionListener.cs" />
+    <Compile Include="ProjectBase\SolutionListenerForBuildDependencyUpdate.cs" />
+    <Compile Include="ProjectBase\SolutionListenerForProjectEvents.cs" />
+    <Compile Include="ProjectBase\SolutionListenerForProjectOpen.cs" />
+    <Compile Include="ProjectBase\SolutionListenerForProjectReferenceUpdate.cs" />
+    <Compile Include="ProjectBase\StructuresEnums.cs" />
+    <Compile Include="ProjectBase\SuspendFileChanges.cs" />
+    <Compile Include="ProjectBase\TokenProcessor.cs" />
+    <Compile Include="ProjectBase\Tracing.cs" />
+    <Compile Include="ProjectBase\TrackDocumentsHelper.cs" />
+    <Compile Include="ProjectBase\TypeConverters.cs" />
+    <Compile Include="ProjectBase\UpdateSolutionEventsListener.cs" />
+    <Compile Include="ProjectBase\Url.cs" />
+    <Compile Include="ProjectBase\Utilities.cs" />
+    <Compile Include="ProjectBase\VSCommands.cs" />
+    <Compile Include="ProjectBase\VSMDCodeDomProvider.cs" />
+    <Compile Include="ProjectBase\VSShellUtilities.cs" />
+    <Compile Include="ProjectProperty.cs" />
+    <Compile Include="ProjectPropertyArgumentException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WixWarningLevel.cs" />
+    <Content Include="Resources\Delete.png" />
+    <Content Include="Resources\DownArrow.png" />
+    <Content Include="Resources\Icons\WixBundle.ico" />
+    <Content Include="Resources\Icons\WixLibrary.ico" />
+    <Content Include="Resources\Icons\WixMergeModule.ico" />
+    <Content Include="Resources\imagelis.bmp" />
+    <Content Include="Resources\IncludeFile.ico" />
+    <Content Include="Resources\LocalizationFile.ico" />
+    <Content Include="Resources\Package.ico" />
+    <Content Include="Resources\ProductFile.ico" />
+    <Content Include="Resources\ProjectFile.ico" />
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.cs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Compile Include="PropertyPages\WixBuildEventsPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixBuildEventsPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixBuildEventsPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixBuildEventsPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\WixBuildPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixBuildPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixBuildPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixBuildPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\WixInstallerPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixInstallerPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixInstallerPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixInstallerPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\WixPathsPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixPathsPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixPathsPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixPathsPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\WixPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyPages\WixToolsSettingsPropertyPage.cs" />
+    <Compile Include="PropertyPages\WixToolsSettingsPropertyPagePanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PropertyPages\WixToolsSettingsPropertyPagePanel.Designer.cs">
+      <DependentUpon>WixToolsSettingsPropertyPagePanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyValidator.cs" />
+    <Compile Include="RunPostBuildEvent.cs" />
+    <Compile Include="WixBuildMacroCollection.cs" />
+    <Compile Include="WixConfigProvider.cs" />
+    <Compile Include="WixDesignPropertyDescriptor.cs" />
+    <Compile Include="WixExtensionReferenceNode.cs" />
+    <Compile Include="WixExtensionReferenceNodeProperties.cs" />
+    <Compile Include="WixFileNode.cs" />
+    <Compile Include="WixFileNodeNonMemberProperties.cs" />
+    <Compile Include="WixFileNodeProperties.cs" />
+    <Compile Include="WixFolderNode.cs" />
+    <Compile Include="WixFolderNodeNonMemberProperties.cs" />
+    <Compile Include="WixFolderNodeProperties.cs" />
+    <Compile Include="WixHelperMethods.cs" />
+    <Compile Include="WixLibraryReferenceNode.cs" />
+    <Compile Include="WixLibraryReferenceNodeProperties.cs" />
+    <Compile Include="WixLinkedFileNodeProperties.cs" />
+    <Compile Include="WixLocalizedCategoryAttribute.cs" />
+    <Compile Include="WixLocalizedControlTextAttribute.cs" />
+    <Compile Include="WixLocalizedDescriptionAttribute.cs" />
+    <Compile Include="WixLocalizedDisplayNameAttribute.cs" />
+    <Compile Include="WixNonMemberDesignPropertyDescriptor.cs" />
+    <Compile Include="WixOutputType.cs" />
+    <Compile Include="WixPackageSettings.cs" />
+    <Compile Include="WixProjectConfig.cs" />
+    <Compile Include="WixProjectFactory.cs" />
+    <Compile Include="WixProjectFileConstants.cs" />
+    <Compile Include="WixProjectMembers.cs" />
+    <Compile Include="WixProjectNode.cs" />
+    <Compile Include="WixProjectNodeProperties.cs" />
+    <Compile Include="WixProjectReferenceNode.cs" />
+    <Compile Include="WixProjectReferenceNodeProperties.cs" />
+    <Compile Include="WixReferenceContainerNode.cs" />
+    <Compile Include="WixReferenceNode.cs" />
+    <Compile Include="WixReferenceNodeProperties.cs" />
+    <Compile Include="WixReferenceValidator.cs" />
+    <Compile Include="WixStrings.Designer.cs" />
+    <Compile Include="WixVsConstants.cs" />
+    <Compile Include="WixPackage.cs" />
+    <Content Include="Resources\Splash.bmp" />
+    <Content Include="Resources\UpArrow.png" />
+    <Content Include="Resources\WixLibraryFile.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.txt">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\TextFile\TextFile.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\TextFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\MSBuild\wix.ca.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>MSBuild</InstallRoot>
+      <VSIXSubPath>Microsoft\WiX\v3.x</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\MSBuild\wix.nativeca.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>MSBuild</InstallRoot>
+      <VSIXSubPath>Microsoft\WiX\v3.x</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\MSBuild\wix.targets">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <InstallRoot>MSBuild</InstallRoot>
+      <VSIXSubPath>Microsoft\WiX\v3.x</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.cpp">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.def">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomActionCPP.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomActionCPP.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\stdafx.cpp">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\stdafx.h">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\targetver.h">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.csproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomActionCS.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.vb">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.vbproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomActionVB.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\WixBundle.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\WixBundle.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\WixLibrary.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\WixLibrary.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\WixMergeModule.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\WixMergeModule.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\WixProject.ico">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\WixProject.vstemplate">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\BlankFile\BlankFile.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\BlankFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\IncludeFile\IncludeFile.wxi">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\IncludeFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ItemTemplates\LocalizationFile\LocalizationFile.wxl">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ItemTemplates\LocalizationFile</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCPP\CustomAction.vcxproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCPP</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionCS\CustomAction.config">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionCS</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\CustomActionVB\CustomAction.config">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\CustomActionVB</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\Bundle.Generated.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\Bundle.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixBundleProject\BundleProject.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixBundleProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\Library.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixLibrary\setuplibrary.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixLibrary</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\MergeModule.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixMergeModule\MergeModule.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixMergeModule</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\Product.wxs">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <Content Include="Resources\ProjectTemplates\WixProject\SetupProject.wixproj">
+      <IncludeInVSIX>true</IncludeInVSIX>
+      <VSIXSubPath>ProjectTemplates\WiX\WixProject</VSIXSubPath>
+    </Content>
+    <None Include="source.extension.vsixmanifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VsixContent.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Microsoft.Build.Conversion.v4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.SDK" Version="16.0.202" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.VSSDK.BuildTools" Version="16.3.2099" />
+    <PackageReference Include="Microsoft.Build" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Engine" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="16.0.461" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="16.0.461" />
+    <PackageReference Include="VSSDK.VSHelp" Version="7.0.4" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Controls\FolderBrowserTextBox.resx">
+      <DependentUpon>FolderBrowserTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixBuildEventEditor.resx">
+      <DependentUpon>WixBuildEventEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixBuildEventTextBox.resx">
+      <DependentUpon>WixBuildEventTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixColorUserControl.resx">
+      <DependentUpon>WixColorUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixFoldersSelector.resx">
+      <DependentUpon>WixFoldersSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixGroupBox.resx">
+      <DependentUpon>WixGroupBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\WixGroupLabel.resx">
+      <DependentUpon>WixGroupLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DontShowAgainDialog.resx">
+      <DependentUpon>DontShowAgainDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileOverwriteDialog.resx">
+      <DependentUpon>FileOverwriteDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WixBuildEventEditorForm.resx">
+      <DependentUpon>WixBuildEventEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Microsoft.VisualStudio.Package.Project.resx" />
+    <EmbeddedResource Include="PropertyPages\WixBuildEventsPropertyPagePanel.resx">
+      <DependentUpon>WixBuildEventsPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\WixBuildPropertyPagePanel.resx">
+      <DependentUpon>WixBuildPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\WixInstallerPropertyPagePanel.resx">
+      <DependentUpon>WixInstallerPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\WixPathsPropertyPagePanel.resx">
+      <DependentUpon>WixPathsPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\WixPropertyPagePanel.resx">
+      <DependentUpon>WixPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PropertyPages\WixToolsSettingsPropertyPagePanel.resx">
+      <DependentUpon>WixToolsSettingsPropertyPagePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WixStrings.resx" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\VSSDK\Microsoft.VsSDK.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="VsixContent.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

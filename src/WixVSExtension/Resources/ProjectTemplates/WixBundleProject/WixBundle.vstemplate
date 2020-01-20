@@ -1,0 +1,29 @@
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>Bootstrapper Project for WiX v3</Name>
+    <Description>A project for creating a WiX based EXE setup layout using WiX Toolset v3</Description>
+    <Icon>WixBundle.ico</Icon>
+    <LanguageTag>WiX</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>WiX</ProjectTypeTag>
+    <ProjectType>WiX</ProjectType>
+    <SortOrder>50</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>Bootstrapper</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+  </TemplateData>
+
+  <TemplateContent>
+    <Project File="BundleProject.wixproj" TargetFileName="$safeprojectname$.wixproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true" TargetFileName="Bundle.wxs">Bundle.wxs</ProjectItem>
+    </Project>
+    <CustomParameters>
+      <CustomParameter Name="$loc_WXS_TODO$" Value="TODO: Define the list of chained packages."/>
+      <CustomParameter Name="$loc_WXS_NOTE1$" Value="Note: The following PackageGroupRef is required to pull in generated authoring from project references." />
+      <CustomParameter Name="$loc_WIXPROJ_TOMODIFY_LINE1$" Value="To modify your build process, add your task inside one of the targets below and uncomment it." />
+      <CustomParameter Name="$loc_WIXPROJ_TOMODIFY_LINE2$" Value="Other similar extension points exist, see Wix.targets." />
+    </CustomParameters>
+  </TemplateContent>
+</VSTemplate>

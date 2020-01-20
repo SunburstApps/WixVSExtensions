@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+    <Metadata>
+        <Identity Id="WixToolset.VisualStudioExtension.Dev16" Version="|WixVSExtension;GetBuildVersion|" Language="en-US" Publisher="William Kent" />
+        <DisplayName>Sunburst WiX Visual Studio Extension</DisplayName>
+        <Description xml:space="preserve">Visual Studio integration for the WiX Toolset - the most powerful set of tools available to create your Windows installation experience. Contains extra features above and beyond the upstream original, such as PackageReference support and a graphical UI designer. Please note that this extension *cannot* be installed side-by-side with the upstream "Votive" extension.</Description>
+    </Metadata>
+    <Installation AllUsers="true">
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[16.0, 17.0)" />
+    </Installation>
+    <Dependencies>
+        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    </Dependencies>
+    <Prerequisites>
+        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[16.0,17.0)" DisplayName="Visual Studio core editor" />
+    </Prerequisites>
+    <Assets>
+        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+    </Assets>
+</PackageManifest>

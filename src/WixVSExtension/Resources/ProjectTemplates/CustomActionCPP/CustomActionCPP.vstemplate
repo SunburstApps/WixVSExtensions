@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name>C++ Custom Action Project for WiX v3</Name>
+    <Description>A project for creating an MSI custom action using WiX Toolset v3</Description>
+    <Icon>CustomActionCPP.ico</Icon>
+    <LanguageTag>Cpp</LanguageTag>
+    <PlatformTag>Windows</PlatformTag>
+    <ProjectTypeTag>WiX</ProjectTypeTag>
+    <ProjectType>WiX</ProjectType>
+    <TemplateID>Microsoft.Deployment.WindowsInstaller.CustomActionCPP</TemplateID>
+    <RequiredFrameworkVersion>2.0</RequiredFrameworkVersion>
+    <SortOrder>80</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>CustomAction</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+  </TemplateData>
+
+  <TemplateContent>
+    <Project File="CustomAction.vcxproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" OpenInEditor="true">CustomAction.cpp</ProjectItem>
+      <ProjectItem ReplaceParameters="true">CustomAction.def</ProjectItem>
+      <ProjectItem ReplaceParameters="true">stdafx.cpp</ProjectItem>
+      <ProjectItem>stdafx.h</ProjectItem>
+      <ProjectItem>targetver.h</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
