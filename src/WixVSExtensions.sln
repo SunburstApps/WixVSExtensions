@@ -1,16 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixVSExtensions", "WixVSExtensions\WixVSExtensions.csproj", "{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WixVSExtensions.Tests", "WixVSExtensions.Tests\WixVSExtensions.Tests.csproj", "{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WixVSExtensions", "WixVSExtensions\WixVSExtensions.csproj", "{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}"
 EndProject
 Global
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
@@ -32,17 +27,11 @@ Global
 		{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}.Release|x64.Build.0 = Release|Any CPU
 		{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}.Release|x86.ActiveCfg = Release|Any CPU
 		{A1CEF4A3-9ED5-4709-A15E-6B7C0EE5694F}.Release|x86.Build.0 = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|x64.Build.0 = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Debug|x86.Build.0 = Debug|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|x64.ActiveCfg = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|x64.Build.0 = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|x86.ActiveCfg = Release|Any CPU
-		{F635CF39-6EE2-4ED6-9AE6-84E5939E8100}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41D38D00-6362-43EE-BC9A-E6CE7FD071A8}
 	EndGlobalSection
 EndGlobal
